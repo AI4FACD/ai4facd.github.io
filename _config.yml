@@ -1,0 +1,14 @@
+title: AI4FACD
+description: Jekyll theme for a conference website
+baseurl: ""
+url: "https://ai4facd.github.io"
+
+theme: jekyll-nagymaros
+
+indexing: true
+
+permalink: pretty
+
+exclude:
+  - LICENSE
+  - README.md
