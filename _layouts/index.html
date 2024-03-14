@@ -5,8 +5,18 @@ layout: default
 {% include metadata.liquid %}
 {% include header.html %}
 
+<style>
+body {
+    background: url('{{ site.baseurl }}/images/bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+</style>
+
 <main class="my-4">
-    <div class="container px-5 py-3 bg-gray-2 rounded">
+    <div class="container px-5 py-3 bg-gray-2 rounded" style="--bs-bg-opacity: .90;">
         <h1 class="display-5">{{ title }}</h1>
         <p class="lead">{{ description }}</p>
         <hr class="my-4">

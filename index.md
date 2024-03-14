@@ -4,6 +4,7 @@ title: "AI for Full-Automated Chip Design: Gimmick or Trend?"
 description: Co-Located with <a href="https://iscaconf.org/isca2024/">ISCA 2024</a>
 ---
 
+## About
 
 Over the past decades, numerous of researchers and engineers have made significant contributions to the
 design of high-performance computers. The pursuit of **automated processor design** has been a
@@ -27,3 +28,18 @@ how to apply AI techniques to **boost automated architectural design**, and wher
 of AI techniques in automated design**. We aim to necessitate a collaborative effort among researchers
 with expertise in **machine learning, programming languages, compilers, computer architecture, and
 electronic design automation(EDA)**.
+
+
+## Topics
+
+This workshop will focus on but not limited to the following topics:
+1. High-performance automated design for domain-specific accelerators.
+2. Development of Architecture Design Language (ADL) tailored for automated processor design.
+3. Utilization of Large Language Models (LLMs) in automated circuit design.
+4. Design Technology Co-Optimization (DTCO) methodologies.
+5. Verification and testing strategies for automated processor design.
+6. Design space definition and exploration to improve automated design quality.
+7. Emerging methods for automated processor generation.
+8. Toolchains for reconfigurable architecture.
+
+For any submission information, please send your requests to organizers at xxx@ict.com, due by xxx.
