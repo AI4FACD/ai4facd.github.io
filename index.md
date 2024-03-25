@@ -41,5 +41,5 @@ or Trend?” after the talks.
 
 Please refer to the following timeline for the submission process:
 - Abstract submissions deadline: April, 2024
-- Abstract submission: [Email](mailto:iprc.chiplearning@mailfence.com) `(lambda x: x@mailfence.com)(iprc.chiplearning)` 
+- Abstract submission: [Email](mailto:ai4facd@gmail.com) `ai4facd@gmail.com` 
 - Author notification: May 13, 2024
