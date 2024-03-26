@@ -27,139 +27,152 @@
     <link rel="stylesheet" href="http://localhost:4000/assets/css/leaflet.css">
     <link rel="stylesheet" href="http://localhost:4000/assets/css/open-color.css">
     <link rel="stylesheet" href="http://localhost:4000/assets/css/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:4000/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:4000/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="http://localhost:4000/images/favicon/site.webmanifest">
 </head>
 
 <body>
     
 
 
+
 <header class="bg-gray-4">
     <div class="container">
         <nav class="navbar navbar-expand-sm">
             <a class="navbar-brand" href="http://localhost:4000">AI4FACD</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation"
+                aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navigation">
                 <div class="navbar-nav">
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <a class="nav-link" href="http://localhost:4000/program/">Program</a>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <a class="nav-link" href="http://localhost:4000/locations/">Locations</a>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <a class="nav-link" href="http://localhost:4000/contributors/">Contributors</a>
-                    
-                    
-                    
+                    <a class="nav-item nav-link" href="#About">About</a>
+                    <a class="nav-item nav-link" href="#Topics">Topics</a>
+                    <a class="nav-item nav-link" href="#Submission">Submission</a>
+                    <a class="nav-item nav-link" href="#Program">Program</a>
+                    <a class="nav-item nav-link" href="#Location">Location</a>
+                    <a class="nav-item nav-link" href="#Organizer">Organizer</a>
                 </div>
             </div>
         </nav>
     </div>
 </header>
 
-<style>
-body {
-    background: url('/images/bg.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-</style>
-
 <main class="my-4">
-    <div class="container px-5 py-3 bg-gray-2 rounded" style="--bs-bg-opacity: .97;">
-        <h1 class="display-5">AI for Fully-Automated Chip Design: Gimmick or Trend?</h1>
-        <p class="lead">Co-Located with <a href="https://iscaconf.org/isca2024/">ISCA 2024</a></p>
-        <hr class="my-4">
-        <p>Welcome to the workshop on “AI for Fully-Automated Chip Design”, to be located with ISCA 2024.
-Over the past decades, numerous researchers and engineers have made significant contributions
-to the design of high-performance computers. The pursuit of automated processor design has been
-a long-standing goal. As artificial intelligence (AI) demonstrates its potential to outperform
-humans in specific areas — such as playing Go, optimizing code, and predicting protein
-structures — architecture researchers are increasingly interested in exploring the use of AI
-techniques to enable automated processor design. Some recent advancements in this field have
-made some progress in AI-based architecture optimization. However, these initiatives lag
-significantly behind the goal of achieving autonomous processor design and self-evolution,
-a concept envisioned by Von Neumann in 1956 as “Self-Reproducing Automata”. Clearly, processor
-design is fundamentally different from traditional AI tasks: The precision necessary for CPU
-design is extraordinarily high (&gt;99.99999999999%), vastly surpassing the levels typically
-associated with prediction and generation tasks in the field of AI. CPU design is the ultimate
-product of logical computation, an area in which current data-driven AI technologies fall short,
-presenting a formidable challenge to the proficiency of modern AI.</p>
-
-<p>Therefore, we aim to organize this workshop to bring together more architectural designers to
-discuss how to apply AI techniques to boost automated architectural design, and where are the
-boundaries of AI techniques in automated design.</p>
-
-<p>This workshop will focus on but not limited to the following topics:</p>
-<ol>
-  <li>High-performance automated design for domain-specific accelerators.</li>
-  <li>Development of Architecture Design Language (ADL) tailored for automated processor design.</li>
-  <li>Utilization of Large Language Models (LLMs) in automated circuit design.</li>
-  <li>Design Technology Co-Optimization (DTCO) methodologies.</li>
-  <li>Verification and testing strategies for automated processor design.</li>
-  <li>Design space definition and exploration to improve automated design quality.</li>
-  <li>Emerging methods for automated processor generation.</li>
-</ol>
-
-<p>There will be a mix of invited talks and presentations selected from the submissions to the call
-for participation available here. We will have a panel “AI for Fully-Automated Chip Design: Gimmick
-or Trend?” after the talks.</p>
-
-<p>Please refer to the following timeline for the submission process:</p>
-<ul>
-  <li>Abstract submissions deadline: April, 2024</li>
-  <li>Abstract submission: <a href="mailto:iprc.chiplearning@mailfence.com">Email</a> <code class="language-plaintext highlighter-rouge">(lambda x: x@mailfence.com)(iprc.chiplearning)</code></li>
-  <li>Author notification: May 13, 2024</li>
-</ul>
-
+    <div class="container px-5 py-3 bg-gray-2 rounded">
         
-        <div class="btn-group-lg mt-4 mb-3" role="group">
+        <h1 class="display-3 text-center">AI for Fully-Automated Chip Design: Gimmick or Trend?</h1>
+        <p class="lead text-center">June 29–July 3, 2024 @ Buenos Aires, Argentina</p>
+        <p class="lead text-center">Co-Located with <a href="https://iscaconf.org/isca2024/">ISCA 2024</a></p>
+
+        <section id="About">
+            <hr class="my-4">
+            <h3>About</h3>
+            <p>
+                Welcome to the workshop on "AI for Fully-Automated Chip Design", to be located with ISCA 2024.
+                Over the past decades, numerous researchers and engineers have made significant contributions
+                to the design of high-performance computers. The pursuit of automated processor design has been
+                a long-standing goal. As artificial intelligence (AI) demonstrates its potential to outperform
+                humans in specific areas — such as playing Go, optimizing code, and predicting protein
+                structures — architecture researchers are increasingly interested in exploring the use of AI
+                techniques to enable automated processor design. Some recent advancements in this field have
+                made some progress in AI-based architecture optimization. However, these initiatives lag
+                significantly behind the goal of achieving autonomous processor design and self-evolution,
+                a concept envisioned by Von Neumann in 1956 as "Self-Reproducing Automata". Clearly, processor
+                design is fundamentally different from traditional AI tasks: The precision necessary for CPU
+                design is extraordinarily high (>99.99999999999%), vastly surpassing the levels typically
+                associated with prediction and generation tasks in the field of AI. CPU design is the ultimate
+                product of logical computation, an area in which current data-driven AI technologies fall short,
+                presenting a formidable challenge to the proficiency of modern AI.
+            </p>
+
+            <p>
+                Therefore, we aim to organize this workshop to bring together more architectural designers to
+                discuss how to apply AI techniques to boost automated architectural design, and where are the
+                boundaries of AI techniques in automated design.
+            </p>
+        </section>
+
+        <section id="Topics">
+            <hr class="my-4">
+            <h3>Topics</h3>
+            This workshop will focus on but not limited to the following topics:
+            <ul>
+                <li>High-performance automated design for domain-specific accelerators.</li>
+                <li>Development of Architecture Design Language (ADL) tailored for automated processor design.</li>
+                <li>Utilization of Large Language Models (LLMs) in automated circuit design.</li>
+                <li>Design Technology Co-Optimization (DTCO) methodologies.</li>
+                <li>Verification and testing strategies for automated processor design.</li>
+                <li>Design space definition and exploration to improve automated design quality.</li>
+                <li>Emerging methods for automated processor generation.</li>
+            </ul>
+        </section>
+
+        <section id="Submission">
+            <hr class="my-4">
+            <h3>Submission</h3>
+            <p>
+                There will be a mix of invited talks and presentations selected from the submissions to the call
+                for participation available here. We will have a panel “AI for Fully-Automated Chip Design: Gimmick
+                or Trend?” after the talks.
+            </p>
+
+            <ul>
+                <li>Submissions should be up to <strong>4</strong> pages in length(excluding references), and must be in
+                    PDF format.</li>
+                <li>Please ensure your submission follows the <a
+                        href="https://www.iscaconf.org/isca2024/submit/">ISCA'24 LaTeX Template</a>, which guarantees
+                    consistency and readability for all submissions.</li>
+
+                <li>Abstract submission: <a href="mailto:ai4facd@gmail.com">ai4facd@gmail.com</a></li>
+                <li>Abstract submissions deadline: April, 2024</li>
+                <li>Author notification: May 13, 2024</li>
+            </ul>
+        </section>
+
+        <section id="Program">
+            <hr class="my-4">
+            <h3>Program</h3>
+            TO BE DECIDED.
             
+            <div class="row">
+                
+                
+                
+                
+                <div class="col-lg-12">
+                    
+                </div>
+            </div>
             
+        </section>
+
+        <section id="Location">
+            <hr class="my-4">
+            <h3>Location</h3>
+            Buenos Aires, Argentina, at the <a href="https://www.hilton.com/en/hotels/buehihh-hilton-buenos-aires/"
+                target="_blank">Hilton Buenos</a>
             
+            <div id="map"></div>
             
-            
-            <a href="https://github.com/AI4FACD/ai4facd.github.io" type="button" class="btn btn-primary d-block d-lg-inline-block my-lg-0" target="_blank">GITHUB</a>
-            
-        </div>
-        
+        </section>
+
+        <section id="Organizer">
+            <hr class="my-4">
+            <h3>Organizing Committee</h3>
+            <ul class="list-unstyled">
+                <li class="fw-light"><a href="mailto:huxing@ict.ac.cn">Xing Hu</a>, Institute of Computing Technology, CAS</li>
+                <li class="fw-light"><a href="mailto:yuanxie@ust.hk">Yuan Xie</a>, The Hong Kong University of Science and Technology</li>
+            </ul>
+        </section>
     </div>
 </main>
 
-
-
-
+<footer class="container cemb-4 text-center py-3">
+    <small class="text-muted">ISCA Workshop: AI for Fully-Automated Chip Design (AI4FACD @ ISCA 2024)</small>
+</footer>
     <script src="http://localhost:4000/assets/js/bootstrap.js"></script>
     <script src="http://localhost:4000/assets/js/leaflet.js"></script>
     <script src="http://localhost:4000/assets/js/main.js"></script>
