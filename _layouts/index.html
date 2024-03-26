@@ -4,10 +4,13 @@ layout: default
 
 {% include metadata.liquid %}
 
-<header class="bg-gray-4">
+<header class="bg-gray-4 fixed-top">
     <div class="container">
         <nav class="navbar navbar-expand-sm">
-            <a class="navbar-brand" href="{{ site.url }}">{{ site.title }}</a>
+            <a class="navbar-brand" href="{{ site.url }}">
+                <img src="{{ site.baseurl }}/images/isca.png" alt="" width="39" height="24" class="d-inline-block align-text-top">
+                {{ site.title }}
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation"
                 aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -26,7 +29,17 @@ layout: default
     </div>
 </header>
 
-<main class="my-4">
+<main style="margin-top: 100px;">
+
+    <style>
+        a.anchor {
+          display: block;
+          position: relative;
+          top: -60px;
+          visibility: hidden;
+        }
+    </style>
+
     <div class="container px-5 py-3 bg-gray-2 rounded">
         
         <div style="background-image: url('{{ site.baseurl }}/images/bg.jpg');">
@@ -35,7 +48,8 @@ layout: default
         <p class="lead text-center text-light">Co-Located with <a class="text-warning" href="https://iscaconf.org/isca2024/"><strong>ISCA 2024</strong></a></p>
         </div>
 
-        <section id="About">
+        <section>
+            <a class="anchor" id="About"></a>
             <hr class="my-4">
             <h3>About</h3>
             <p>
@@ -63,7 +77,8 @@ layout: default
             </p>
         </section>
 
-        <section id="Topics">
+        <section>
+            <a class="anchor" id="Topics"></a>
             <hr class="my-4">
             <h3>Topics</h3>
             This workshop will focus on but not limited to the following topics:
@@ -78,7 +93,8 @@ layout: default
             </ul>
         </section>
 
-        <section id="Submission">
+        <section>
+            <a class="anchor" id="Submission"></a>
             <hr class="my-4">
             <h3>Submission</h3>
             <p>
@@ -100,7 +116,8 @@ layout: default
             </ul>
         </section>
 
-        <section id="Program">
+        <section>
+            <a class="anchor" id="Program"></a>
             <hr class="my-4">
             <h3>Program</h3>
             TO BE DECIDED.
@@ -207,7 +224,8 @@ layout: default
             {% endif %}
         </section>
 
-        <section id="Location">
+        <section>
+            <a class="anchor" id="Location"></a>
             <hr class="my-4">
             <h3>Location</h3>
             Buenos Aires, Argentina, at the <a href="https://www.hilton.com/en/hotels/buehihh-hilton-buenos-aires/"
@@ -217,7 +235,8 @@ layout: default
             {% endif %}
         </section>
 
-        <section id="Organizer">
+        <section>
+            <a class="anchor" id="Organizer"></a>
             <hr class="my-4">
             <h3>Organizing Committee</h3>
             <ul class="list-unstyled">
