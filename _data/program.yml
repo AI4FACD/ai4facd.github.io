@@ -1,2 +1,29 @@
 legend:
   title: Legend
+
+days:
+  - name: June 28th
+    events:
+      - time: 14:10 to 14:35
+        title: David Pan
+      - time: 14:35 to 15:00
+        title: Automatically generating robotics accelerators
+        subtitle: Yuhao Zhu, University of Rochester
+      - time: 15:00 to 15:20
+        title: Break
+      - time: 15:20 to 15:45
+        title: TODO
+        subtitle: TODO
+      - time: 15:45 to 16:10
+        title: Empowering Physical Design of VLSI Circuits with Deep Learning from Modeling to Optimization
+        subtitle: Yibo Lin, Peking University
+      - time: 16:10 to 16:35
+        title: Machine Learning for System-Level Design Challenges and Opportunities
+        subtitle: Andreas Gerstlauer, University of Texas at Austin
+      - time: 16:35 to 17:00
+        title: Chip Learning for Processor Design
+        subtitle: Zidong Du, Institute of Computing Technology, Chinese Academy of Sciences
+      - time: 17:00 to 17:25
+        title: A High-Level Synthesis Based Framework for Design Space Exploration and Generation of Neural Network Accelerators
+        subtitle: Kartik Prabhu, Stanford University
+
