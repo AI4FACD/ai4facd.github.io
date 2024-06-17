@@ -21,8 +21,8 @@ layout: default
                     <a class="nav-item nav-link" href="#Topics">Topics</a>
                     <a class="nav-item nav-link" href="#Program">Program</a>
                     <a class="nav-item nav-link" href="#Location">Location</a>
-                    <a class="nav-item nav-link" href="#Organizer">Organizer</a>
                     <a class="nav-item nav-link" href="#Details">Details</a>
+                    <a class="nav-item nav-link" href="#Organizer">Organizer</a>
                     <a class="nav-item nav-link" href="mailto:ai4facd@gmail.com">Contact us</a>
                 </div>
             </div>
@@ -111,7 +111,7 @@ layout: default
                             <span class="h5 m-0">{{ day.name }}</span>
                         </button>
                     </h5>
-                    <div id="{{ slug }}" class="accordion-collapse collapse">
+                    <div id="{{ slug }}" class="accordion-collapse collapse show">
                         <div class="accordion-body mt-2">
                             {% assign categories = site.data.program.legend.categories %}
                             <ul class="list-unstyled ms-3 ms-lg-0 lh-sm">
@@ -133,13 +133,12 @@ layout: default
                                     {% assign classes = classes | append: ' mb-4' %}
                                     {% endunless %}
                                     <div class="row col-lg-10 {{ classes }}">
-                                        <h5 class="fw-normal m-0 mb-2">{{ event.title }}</h5>
-                                        <p class="fw-light m-0">{{ event.subtitle }}</p>
-                                        <p class="fw-light m-0">
                                         {% if event.detail %}
-                                        <a href="{{ event.detail }}">[Detail]</a>
+                                        <h5 class="fw-normal m-0 mb-2"><a href="{{ event.detail }}">{{ event.title }}</a></h5>
+                                        {% else %}
+                                        <h5 class="fw-normal m-0 mb-2">{{ event.title }}</h5>
                                         {% endif %}
-                                        </p>
+                                        <p class="fw-light m-0">{{ event.subtitle }}</p>
                                     </div>
                                 </li>
                                 {% endfor %}
@@ -184,18 +183,6 @@ layout: default
         </section>
 
         <section>
-            <a class="anchor" id="Organizer"></a>
-            <hr class="my-4">
-            <h3>Organizing Committee</h3>
-            <ul class="list-unstyled">
-                <li class="fw-light"><a href="mailto:huxing@ict.ac.cn">Xing Hu</a>, ICT, Chinse Academy of Sciences</li>
-                <li class="fw-light"><a href="mailto:gsun@pku.edu.cn">Guangyu Sun</a>, Peking University</li>
-                <li class="fw-light"><a href="mailto:yuanxie@ust.hk">Yuan Xie</a>, Hong Kong University of Science and Technology (HKUST)</li>
-                <li class="fw-light"><a href="mailto:huangdi@ict.ac.cn">Di Huang</a>, ICT, Chinse Academy of Sciences</li>
-            </ul>
-        </section>
-
-        <section>
             <a class="anchor" id="Details"></a>
             <hr class="my-4">
             <h3>Program Details</h3>
@@ -210,6 +197,18 @@ layout: default
                     <p class="card-text">Yuhao Zhu is an Associate Professor of Computer Science and Brain and Cognitive Sciences at University of Rochester.  He works at the intersection of imaging, computer systems, and human perception & cognition.  He has received the typical awards for someone at this stage in his career.  More about his research can be found at: <a href="http://www.horizon-lab.org/">http://www.horizon-lab.org/</a></p>
                 </div>
             </div>
+        </section>
+
+        <section>
+            <a class="anchor" id="Organizer"></a>
+            <hr class="my-4">
+            <h3>Organizing Committee</h3>
+            <ul class="list-unstyled">
+                <li class="fw-light"><a href="mailto:huxing@ict.ac.cn">Xing Hu</a>, ICT, Chinse Academy of Sciences</li>
+                <li class="fw-light"><a href="mailto:gsun@pku.edu.cn">Guangyu Sun</a>, Peking University</li>
+                <li class="fw-light"><a href="mailto:yuanxie@ust.hk">Yuan Xie</a>, Hong Kong University of Science and Technology (HKUST)</li>
+                <li class="fw-light"><a href="mailto:huangdi@ict.ac.cn">Di Huang</a>, ICT, Chinse Academy of Sciences</li>
+            </ul>
         </section>
         
     </div>
