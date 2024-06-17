@@ -9,6 +9,7 @@ days:
       - time: 14:35 to 15:00
         title: Automatically generating robotics accelerators
         subtitle: Yuhao Zhu, University of Rochester
+        detail: "no2"
       - time: 15:00 to 15:20
         title: Break
       - time: 15:20 to 15:45
