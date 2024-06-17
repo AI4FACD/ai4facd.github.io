@@ -22,6 +22,7 @@ layout: default
                     <a class="nav-item nav-link" href="#Program">Program</a>
                     <a class="nav-item nav-link" href="#Location">Location</a>
                     <a class="nav-item nav-link" href="#Organizer">Organizer</a>
+                    <a class="nav-item nav-link" href="#Details">Details</a>
                     <a class="nav-item nav-link" href="mailto:ai4facd@gmail.com">Contact us</a>
                 </div>
             </div>
@@ -101,12 +102,12 @@ layout: default
         {% if site.data.program %}
         <hr class="my-4">
         <div class="row">
-            <div class="accordion">
+            <div class="accordion accordion-flushs">
                 {% for day in site.data.program.days %}
                 {% assign slug = day.name | slugify %}
                 <div class="accordion-item">
                     <h5 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ slug }}" aria-expanded="false" aria-controls="{{ slug }}">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ slug }}" aria-expanded="true" aria-controls="{{ slug }}">
                             <span class="h5 m-0">{{ day.name }}</span>
                         </button>
                     </h5>
@@ -135,26 +136,8 @@ layout: default
                                         <h5 class="fw-normal m-0 mb-2">{{ event.title }}</h5>
                                         <p class="fw-light m-0">{{ event.subtitle }}</p>
                                         <p class="fw-light m-0">
-                                        {% if event.paper.first %}
-                                            {% for paper in event.paper %}
-                                            <a href="{{ paper }}" target="_blank">[Paper {{ forloop.index }}]</a>
-                                            {% endfor %}
-                                        {% elsif event.paper %}
-                                        <a href="{{ event.paper }}" target="_blank">[Paper]</a>
-                                        {% endif %}
-                                        {% if event.poster.first %}
-                                            {% for poster in event.poster %}
-                                            <a href="{{ poster }}" target="_blank">[Poster {{ forloop.index }}]</a>
-                                            {% endfor %}
-                                        {% elsif event.poster %}
-                                        <a href="{{ event.poster }}" target="_blank">[Poster]</a>
-                                        {% endif %}
-                                        {% if event.slides.first %}
-                                            {% for slides in event.slides %}
-                                            <a href="{{ slides }}" target="_blank">[Slides {{ forloop.index }}]</a>
-                                            {% endfor %}
-                                        {% elsif event.slides %}
-                                        <a href="{{ event.slides }}" target="_blank">[Slides]</a>
+                                        {% if event.detail %}
+                                        <a href="{{ event.detail }}">[Detail]</a>
                                         {% endif %}
                                         </p>
                                     </div>
@@ -211,6 +194,24 @@ layout: default
                 <li class="fw-light"><a href="mailto:huangdi@ict.ac.cn">Di Huang</a>, ICT, Chinse Academy of Sciences</li>
             </ul>
         </section>
+
+        <section>
+            <a class="anchor" id="Details"></a>
+            <hr class="my-4">
+            <h3>Program Details</h3>
+            <div class="card anchor" id="no2">
+                <h5 class="card-header">Automatically generating robotics accelerators</h5>
+                <div class="card-body">
+                    <h5 class="card-title">Abstract</h5>
+                    <p class="card-text">In this talk I’ll talk about the challenges and solution of automatically generating accelerators for autonomous machines.  I’ll describe a framework that adapts to environmental changes while being aware of hardware resources.  In the end I’ll discuss some future challenges.</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Bio</h5>
+                    <p class="card-text">Yuhao Zhu is an Associate Professor of Computer Science and Brain and Cognitive Sciences at University of Rochester.  He works at the intersection of imaging, computer systems, and human perception & cognition.  He has received the typical awards for someone at this stage in his career.  More about his research can be found at: <a href="http://www.horizon-lab.org/">http://www.horizon-lab.org/</a></p>
+                </div>
+            </div>
+        </section>
+        
     </div>
 </main>
 
