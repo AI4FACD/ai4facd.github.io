@@ -5,7 +5,7 @@ days:
   - name: June 28th
     events:
       - time: 14:10 to 14:35
-        title: to be decided
+        title: "AI for Automated Chip Design: Everything, Everywhere, All at Once"
         subtitle: David Pan
         detail: "#no1"
       - time: 14:35 to 15:00
