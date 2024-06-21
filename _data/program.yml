@@ -16,7 +16,7 @@ days:
         title: Break
       - time: 15:20 to 15:45
         title: A Systematic and rapid approach to design space exploration for tensor accelerators
-        subtitle: Qijing Huang
+        subtitle: Qijing Huang, NVIDIA
         detail: "#no3"
       - time: 15:45 to 16:10
         title: "Empowering Physical Design of VLSI Circuits with Deep Learning: from Modeling to Optimization"
