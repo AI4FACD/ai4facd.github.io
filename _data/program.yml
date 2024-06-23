@@ -6,7 +6,7 @@ days:
     events:
       - time: 14:10 to 14:35
         title: "AI for Automated Chip Design: Everything, Everywhere, All at Once"
-        subtitle: David Pan, NVIDIA
+        subtitle: David Pan, The University of Texas at Austin
         detail: "#no1"
       - time: 14:35 to 15:00
         title: Automatically generating robotics accelerators
@@ -24,7 +24,7 @@ days:
         detail: "#no4"
       - time: 16:10 to 16:35
         title: "Machine Learning for System-Level Design: Challenges and Opportunities"
-        subtitle: Andreas Gerstlauer, University of Texas at Austin
+        subtitle: Andreas Gerstlauer, The University of Texas at Austin
         detail: "#no5"
       - time: 16:35 to 17:00
         title: Chip Learning for Processor Design
