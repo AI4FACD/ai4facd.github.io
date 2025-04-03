@@ -1,0 +1,46 @@
+legend:
+  title: Legend
+
+days:
+  - name: June 28th
+    events:
+      - time: 14:10 to 14:35
+        title: "AI for Automated Chip Design: Everything, Everywhere, All at Once"
+        subtitle: David Pan, The University of Texas at Austin
+        detail: "#no1"
+      - time: 14:35 to 15:00
+        title: Automatically generating robotics accelerators
+        subtitle: Yuhao Zhu, University of Rochester
+        detail: "#no2"
+      - time: 15:00 to 15:20
+        title: Break
+      - time: 15:20 to 15:45
+        title: A Systematic and rapid approach to design space exploration for tensor accelerators
+        subtitle: Qijing Huang, NVIDIA
+        detail: "#no3"
+      - time: 15:45 to 16:10
+        title: "Empowering Physical Design of VLSI Circuits with Deep Learning: from Modeling to Optimization"
+        subtitle: Yibo Lin, Peking University
+        detail: "#no4"
+      - time: 16:10 to 16:35
+        title: "Machine Learning for System-Level Design: Challenges and Opportunities"
+        subtitle: Andreas Gerstlauer, The University of Texas at Austin
+        detail: "#no5"
+      - time: 16:35 to 17:00
+        title: Chip Learning for Processor Design
+        subtitle: Zidong Du, Institute of Computing Technology, Chinese Academy of Sciences
+        detail: "#no6"
+      - time: 17:00 to 17:25
+        title: "Scaling Up the Hardware Design Capability of LLMs: Lessons from the 1st OpenDACs Contest of Processor Design"
+        subtitle: Cangyuan Li, Institute of Computing Technology, Chinese Academy of Sciences
+        detail: "#no9"
+      - time: 17:25 to 17:40
+        title: A High-Level Synthesis Based Framework for Design Space Exploration and Generation of Neural Network Accelerators
+        subtitle: Kartik Prabhu, Stanford University
+        detail: "#no8"
+      - time: 17:40 to 17:55
+        title: Machine Learning Assisted Memory and Storage System Management
+        subtitle: Onur Mutlu, ETH Zurich
+        detail: "#no7"
+      - time: 17:55 to 18:00
+        title: Closing Marks

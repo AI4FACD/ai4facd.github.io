@@ -1,0 +1,328 @@
+---
+layout: default
+---
+
+{% include metadata.liquid %}
+
+<header class="bg-gray-4 fixed-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-sm">
+            <a class="navbar-brand" href="{{site.url}}/2025">
+                <img src="{{ site.baseurl }}/images/isca2025.png" alt="" width="39" height="24" class="d-inline-block align-text-top">
+                {{ site.title }}
+            </a>
+            
+	    <div class="nav-item nav-link dropdown ms-auto">
+		<a class="btn btn-primary btn-sm dropdown-toggle" href="#" id="navbarDropdownYears" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+		    Select Year: 2025
+		</a>
+		<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownYears">
+		    <li><a class="dropdown-item" href="{{ site.baseurl }}/2024/">2024</a></li>
+	            <li><a class="dropdown-item" href="{{ site.baseurl }}/2025/">2025</a></li>
+		</ul>
+	    </div>
+ 
+            <div class="collapse navbar-collapse" id="navigation">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="#About">About</a>
+                    <a class="nav-item nav-link" href="#Topics">Topics</a>
+                    <a class="nav-item nav-link" href="#Program">Program</a>
+                    <a class="nav-item nav-link" href="#Location">Location</a>
+                    <a class="nav-item nav-link" href="#Details">Details</a>
+                    <a class="nav-item nav-link" href="#Organizer">Organizer</a>
+                    <a class="nav-item nav-link" href="mailto:ai4facd@gmail.com">Contact us</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main style="margin-top: 100px;">
+
+    <style>
+        a.anchor {
+          display: block;
+          position: relative;
+          top: -60px;
+          visibility: hidden;
+        }
+    </style>
+
+    <div class="container px-5 py-3 bg-gray-2 rounded">
+        
+        <div style="background-image: url('{{ site.baseurl }}/images/bg2025.jpg');">
+        <h1 class="display-3 text-center text-light">AI for Fully-Automated Chip Design</h1>
+        <h1 class="display-3 text-center text-light">The Times They Are a-Changin'</h1>
+        <p class="lead text-center text-light">June 2x, 2025, Tokyo, Japan</p>
+        <p class="lead text-center text-light">Co-Located with <a class="text-warning" href="https://iscaconf.org/isca2025/"><strong>ISCA 2025</strong></a></p>
+        </div>
+
+        <section>
+            <a class="anchor" id="About"></a>
+            <hr class="my-4">
+            <h3>About</h3>
+            <p>
+                Welcome to the workshop on <strong>AI for Fully-Automated Chip Design</strong>, to be located with ISCA 2025.
+                Over the past decades, numerous researchers and engineers have made significant contributions
+                to the design of high-performance computers. The pursuit of <strong>automated processor design</strong> has been
+                a long-standing goal. As artificial intelligence (AI) demonstrates its potential to outperform
+                humans in specific areas — such as playing Go, optimizing code, and predicting protein
+                structures — architecture researchers are increasingly interested in exploring the use of AI
+                techniques to enable automated processor design. Some recent advancements in this field have
+                made some progress in AI-based architecture optimization. However, these initiatives lag
+                significantly behind the goal of achieving autonomous processor design and self-evolution,
+                a concept envisioned by Von Neumann in 1956 as "Self-Reproducing Automata". Clearly, processor
+                design is fundamentally different from traditional AI tasks: The precision necessary for CPU
+                design is extraordinarily high (>99.99999999999%), vastly surpassing the levels typically
+                associated with prediction and generation tasks in the field of AI. CPU design is the ultimate
+                product of logical computation, an area in which current data-driven AI technologies fall short,
+                presenting a formidable challenge to the proficiency of modern AI.
+            </p>
+
+            <p>
+                Therefore, we aim to organize this workshop to bring together more architectural designers to
+                discuss how to <strong>apply AI techniques to boost automated architectural design</strong>, and <strong>where are the
+                boundaries of AI techniques in automated design</strong>.
+            </p>
+        </section>
+
+        <section>
+            <a class="anchor" id="Topics"></a>
+            <hr class="my-4">
+            <h3>Topics</h3>
+            This workshop will focus on but not limited to the following topics:
+            <ul>
+                <li>High-performance automated design for domain-specific accelerators.</li>
+                <li>Development of Architecture Design Language (ADL) tailored for automated processor design.</li>
+                <li>Utilization of Large Language Models (LLMs) in automated circuit design.</li>
+                <li>Design Technology Co-Optimization (DTCO) methodologies.</li>
+                <li>Verification and testing strategies for automated processor design.</li>
+                <li>Design space definition and exploration to improve automated design quality.</li>
+                <li>Emerging methods for automated processor generation.</li>
+            </ul>
+        </section>
+
+        <section>
+            <a class="anchor" id="Program"></a>
+            <hr class="my-4">
+            <h3>Program</h3>
+            
+        {% if site.data.program %}
+        <hr class="my-4">
+        <div class="row">
+            <div class="accordion accordion-flushs">
+                {% for day in site.data.program.days %}
+                {% assign slug = day.name | slugify %}
+                <div class="accordion-item">
+                    <h5 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ slug }}" aria-expanded="true" aria-controls="{{ slug }}">
+                            <span class="h5 m-0">{{ day.name }}</span>
+                        </button>
+                    </h5>
+                    <div id="{{ slug }}" class="accordion-collapse collapse show">
+                        <div class="accordion-body mt-2">
+                            {% assign categories = site.data.program.legend.categories %}
+                            <ul class="list-unstyled ms-3 ms-lg-0 lh-sm">
+                                {% for event in day.events %}
+                                {% if event.category %}
+                                {% assign category = categories | find: 'name', event.category %}
+                                {% assign color = category.color %}
+                                {% else %}
+                                {% assign color = 'gray-4' %}
+                                {% endif %}
+                                {% assign start = event.time | split: ' to ' | slice: 0 %}
+                                {% assign end = event.time | split: ' to ' | slice: 1 %}
+                                <li class="d-flex flex-column flex-lg-row">
+                                    {% assign classes = color | prepend: 'border-start border-3 border-' %}
+                                    <div class="row col-lg-2 pb-2 {{ classes }} border-lg-0">
+                                        <small class="fw-light text-muted">{{ start }}–{{ end }}</small>
+                                    </div>
+                                    {% unless forloop.last %}
+                                    {% assign classes = classes | append: ' mb-4' %}
+                                    {% endunless %}
+                                    <div class="row col-lg-10 {{ classes }}">
+                                        {% if event.detail %}
+                                        <h5 class="fw-normal m-0 mb-2"><a href="{{ event.detail }}">{{ event.title }}</a></h5>
+                                        {% else %}
+                                        <h5 class="fw-normal m-0 mb-2">{{ event.title }}</h5>
+                                        {% endif %}
+                                        <p class="fw-light m-0">{{ event.subtitle }}</p>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% assign legend = day.events | map: 'category' | compact | uniq %}
+                            {% assign size = legend | size %}
+                            {% if size > 0 %}
+                            <div class="mt-4 mb-2">
+                                {% if site.data.program.legend.title %}
+                                <h5 class="fw-normal">{{ site.data.program.legend.title }}</h5>
+                                {% endif %}
+                                {% for item in legend %}
+                                {% assign border = categories | where: 'name', item | map: 'color' | first %}
+                                {% assign bg = border | split: '-' | first | prepend: 'bg-' | append: '-1' %}
+                                {% assign classes = border | prepend: ' border-' | prepend: bg %}
+                                {% unless forloop.last %}
+                                {% assign classes = classes | append: ' me-lg-2' %}
+                                {% endunless %}
+                                {% if border %}
+                                <small class="d-block d-lg-inline-block mt-2 px-3 py-1 border-start border-3 {{ classes }}">{{ item | upcase }}</small>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </section>
+
+        <section>
+            <a class="anchor" id="Location"></a>
+            <hr class="my-4">
+            <h3>Location</h3>
+            Buenos Aires, Argentina, at the <a href="https://www.hilton.com/en/hotels/buehihh-hilton-buenos-aires/"
+                target="_blank">Hilton Buenos</a>
+            {%if site.data.locations %}
+            <div id="map"></div>
+            {% endif %}
+        </section>
+
+        <section>
+            <a class="anchor" id="Details"></a>
+            <hr class="my-4">
+            <h3>Program Details</h3>
+
+            <div class="card anchor mb-3" id="no1">
+                <h4 class="card-header">AI for Automated Chip Design: Everything, Everywhere, All at Once</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Abstract</h5>
+                    <p class="card-text">AI for chip design and EDA has received tremendous interests from both academia and industry in recent years. It touches everything that chip designers care about, from power/performance/area (PPA) to cost/yield, turn-around-time, security, and so on. It is everywhere, in all levels of design abstractions, testing, verification, DTCO, mask synthesis / ILT, and some aspects of analog/mixed-signal and RF IC designs as well. It has also been used to tweak the overall design flow and hyper-parameter tuning, but not yet all at once, e.g., generative AI from design specification to layout, in a correct-by-construction manner. In this talk, I will cover some recent advancement/breakthroughs in AI for automated chip design and share my perspectives.</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Bio</h5>
+                    <p class="card-text">Dr. David Pan (Fellow of ACM, IEEE, and SPIE) is the Silicon Laboratories Endowed Chair Professor at ECE Department, UT Austin. His research interests include electronic design automation, synergistic AI and IC co-optimizations, design for manufacturing, and CAD for analog/mixed-signal/RF and emerging technologies. He has published over 480 refereed journal/conference papers and 9 US patents. He has served in many journal editorial boards and conference committees, e.g., as DAC 2024 TPC Chair and ICCAD 2019/2018 General/TPC Chair. He has received many awards, including 21 Best Paper Awards from premier venues, SRC Technical Excellence Award, DAC Top 10 Author Award in Fifth Decade, ASP-DAC Frequently Cited Author Award, among others. He has graduated over 50 PhD students and postdocs who are now holding key academic and industry positions.</p>
+                </div>
+            </div>
+            
+            <div class="card anchor mb-3" id="no2">
+                <h4 class="card-header">Automatically generating robotics accelerators</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Abstract</h5>
+                    <p class="card-text">In this talk I’ll talk about the challenges and solution of automatically generating accelerators for autonomous machines.  I’ll describe a framework that adapts to environmental changes while being aware of hardware resources.  In the end I’ll discuss some future challenges.</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Bio</h5>
+                    <p class="card-text">Yuhao Zhu is an Associate Professor of Computer Science and Brain and Cognitive Sciences at University of Rochester.  He works at the intersection of imaging, computer systems, and human perception & cognition.  He has received the typical awards for someone at this stage in his career.  More about his research can be found at: <a href="http://www.horizon-lab.org/">http://www.horizon-lab.org/</a></p>
+                </div>
+            </div>
+
+            <div class="card anchor mb-3" id="no3">
+                <h4 class="card-header">A Systematic and Rapid Approach to Design Space Exploration for Tensor Accelerators</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Abstract</h5>
+                    <p class="card-text">Architectural Design Space Exploration (DSE) is a critical yet challenging aspect of chip design. The process involves searching through a vast space of hardware design options and mapping configurations, along with performance evaluations to guide optimization. Although AI/ML is at an inflection point for wide application in data-rich problems, its direct adoption in DSE remains inefficient due to several challenges: the high-dimensional and discrete nature of the search space, lengthy mapping and evaluation cycles, and a lack of design data for generalization. In this talk, we will discuss the tools and techniques we applied in DSE to address these challenges. Specifically, we will cover 1) a variational autoencoder (VAE) approach to transform the design space into a continuous low-dimensional space, 2) an optimization-based mapper and an analytical performance model for rapid tensor accelerator evaluation, and 3) a differentiable formulation for DSE that leverages domain knowledge to further improve search efficiency and generalizability.</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Bio</h5>
+                    <p class="card-text">Qijing Jenny Huang is a research scientist at NVIDIA. Her research focuses on emerging GPU architecture and the co-optimization of algorithms, mappings, and hardware to enhance the system performance. Before NVIDIA, she earned her PhD in Computer Science from UC Berkeley. During her PhD, she has worked on algorithm-hardware codesign for FPGA accelerators, HLS-based design methodology, and ML/ILP-assisted compiler optimization and hardware DSE techniques.</p>
+                </div>
+            </div>
+
+            <div class="card anchor mb-3" id="no4">
+                <h4 class="card-header">Empowering Physical Design of VLSI Circuits with Deep Learning: from Modeling to Optimization</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Abstract</h5>
+                    <p class="card-text">Physical design stands as a pivotal step in the intricate design flow of contemporary VLSI circuits. It maps a circuit design into a physical layout with manufacturable gates and wires. Modern physical design necessitates numerous iterations across multiple design stages to achieve convergence in performance, power, and area. This iterative process is often exceedingly time-intensive. However, amidst the current wave of artificial intelligence, deep learning has emerged as a transformative force, demonstrating remarkable potential across diverse domains such as computer vision, recommendation systems, and robotics. Integrating deep learning into the VLSI design workflow has thus gained significant attention as a promising avenue. In this presentation, we delve into our recent endeavors in developing efficient cross-stage models grounded on open-source datasets like CircuitNet, and examine how these models can facilitate effective optimization in physical design.</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Bio</h5>
+                    <p class="card-text">Yibo Lin is an assistant professor in the School of Integrated Circuits at Peking University. He received the B.S. degree in microelectronics from Shanghai Jiaotong University in 2013, and his Ph.D. degree from the Electrical and Computer Engineering Department of the University of Texas at Austin in 2018. His research interests include physical design, machine learning applications, and GPU/FPGA acceleration. He has received 7 Best Paper Awards at premier venues including DATE 2023, DATE 2022, TCAD 2021, and DAC 2019. He has also served in the Technical Program Committees of many major conferences, including ICCAD, ICCD, ISPD, and DAC.</p>
+		    <a href="https://drive.google.com/file/d/1lrALD13aWKSgKw6E-KotTQ8Ipz5EXp7M/view?usp=drive_link"><h5 class="card-title">Video</h5></a>
+                </div>
+            </div>
+
+            <div class="card anchor mb-3" id="no5">
+                <h4 class="card-header">Machine Learning for System-Level Design: Challenges and Opportunities</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Abstract</h5>
+                    <p class="card-text">Applications of machine learning (ML) techniques to design problems has seen a lot of excitement and promise at lower levels of abstraction. By contrast, corresponding ML approaches for system modeling, design and optimization at higher levels of abstraction have been relatively less explored. In this talk, we will discuss potential solutions, limitations and pitfalls for ML-based system-level design. We will specifically discuss unique challenges and opportunities when applying ML to design problems at higher abstraction levels to close the system-level gap. This will include approaches for predictive modeling and learning-based co-design both vertically across the compute stack as well as horizontally across heterogeneous target components. Time permitting, we will further discuss applications of such ML-based approaches to system architecture exploration, programming and proactive runtime resource management.</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Bio</h5>
+                    <p class="card-text">Andreas Gerstlauer is a Cullen Trust for Higher Education Endowed Professor and Associate Chair for Academic Affairs in the Electrical and Computer Engineering (ECE) Department at The University of Texas at Austin. He received his Ph.D. degree in Information and Computer Science (ICS) from the University of California, Irvine (UCI) in 2004. Prior to joining UT Austin in 2008, he was an Assistant Researcher in the Center for Embedded Computer Systems (CECS) at UC Irvine, leading a research group to develop electronic system-level design tools.  Dr. Gerstlauer is co-author on 3 books and more than 150 conference and journal publications. His work was recognized with the 2021 MLCAD, 2016 DAC and 2015 SAMOS best paper awards, several best paper nominations from, among others, DAC, DATE and HOST, and as a 2021 IEEE HSTTC Top Pick in Hardware and Embedded Security and one of the most influential contributions in 10 years at DATE in 2008. He is the recipient of a 2016-2017 Humboldt Research Fellowship, and he serves or has served as an Associate and Special Issue Editor for ACM TECS and TODAES journals as well as General or Program Chair for major international conferences such as ESWEEK, MEMOCODE, CODES+ISSS and SAMOS.  His research interests include system-level design automation, system modeling, design languages and methodologies, and embedded hardware and software synthesis.</p>
+                </div>
+            </div>
+            
+            <div class="card anchor mb-3" id="no6">
+                <h4 class="card-header">Chip Learning for Processor Design</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Abstract</h5>
+                    <p class="card-text">Designing a central processing unit (CPU), the brain of a computer, requires intensive manual work of talented experts to implement the circuit logic from design specifications. To relieve human efforts and thus boost the design process, considerable progress has recently been made in electronic design automation and artificial intelligence (AI). However, existing approaches still require hand-crafted formal program code as the input to generate circuit logic. Here we report a RISC-V CPU automatically designed by a new AI approach without a formal blueprint. This approach generates the circuit logic, which is represented by a graph structure called Binary Speculation Diagram (BSD), of the CPU design with almost 100% validation accuracy, only from input-output examples. By efficiently exploring a search space of unprecedented size 10^10^540, our approach generates an industrial-scale RISC-V CPU within only 5 hours. The taped-out CPU successfully runs the Linux operating system and performs comparably against the human-designed Intel 80486SX CPU.</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Bio</h5>
+                    <p class="card-text">Du, Zidong is a full professor at State Key Laboratory of Processors (SKLP), Institute of Computing Technology (ICT), Chinese Academy of Sciences (CAS). He obtained his Ph.D degree in computer architecture from ICT, CAS in 2016 and the bachelor degree of Engineering from Department of Electronic Engineering, Tsinghua University in 2011. His research interests mainly focus on artificial intelligence and computer architecture, including designing novel architectures for artificial intelligence (Arch4AI) and with artificial intelligence (AI4Arch). He has won the Best Paper award at ASPLOS 2014, Influential Paper Award at ASPLOS 2024, and Best Paper Runner-up Award at MICRO 2022. His paper from ISCA 2015 was selected in ISCA@50 25-Year Retrospective: 1996-2020". He also received a second-class National Natural Science Award as the third awardee in 2021 for his exceptional research achievements.</p>
+		    <a href="https://drive.google.com/file/d/12PJB2DNMNlhUR7VMxqHS146pMv8dPSKl/view?usp=drive_link"><h5 class="card-title">Video</h5></a>
+                </div>
+            </div>
+            
+            <div class="card anchor mb-3" id="no8">
+                <h4 class="card-header">A High-Level Synthesis Based Framework for Design Space Exploration and Generation of Neural Network Accelerators</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Abstract</h5>
+                    <p class="card-text">Designing neural network accelerators requires significant engineering effort, and as the rapidly evolving field of machine learning develops new models, the current approach of designing ad hoc accelerators does not scale. In this talk, we will present our on-going work on a high-level synthesis (HLS)-based framework for design space exploration and generation of neural network accelerators. Given architectural parameters, such as datatype, scaling granularity, compute parallelization and buffer sizes, our framework generates a performant tape-out-ready RTL accelerator. Accelerators generated through this framework have been taped out in several chips, targeting various workloads including CNNs, Transformers, and extended reality applications.</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Bio</h5>
+                    <p class="card-text">Kartik Prabhu is a PhD student at Stanford University advised by Prof. Priyanka Raina. He received his BS in Computer Engineering from Georgia Institute of Technology in 2018 and his MS in Electrical Engineering from Stanford University in 2021. Kartik’s research focuses on efficient accelerators for machine learning using emerging technologies and chip design automation. His work won the Best Student Paper Award (Circuits) at the 2021 IEEE Symposia on VLSI Technology & Circuits.</p>
+                </div>
+            </div>
+
+            <div class="card anchor mb-3" id="no9">
+                <h4 class="card-header">Scaling Up the Hardware Design Capability of LLMs: Lessons from the 1st OpenDACs Contest of Processor Design</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Abstract</h5>
+                    <p class="card-text">Hardware description language (HDL) code designing is a critical component of the chip design process, requiring substantial engineering and time resources. Recent advancements in large language models (LLMs), such as GPTs, have demonstrated their potential for automate this intricate task. Nevertheless, the existing LLM-based approaches to HDL code generation do not yet meet the complex requirements of real-world hardware design. Although modern LLMs can process long sequences of context tokens, they often do not produce correspondingly long stretches of code; furthermore, their effectiveness in generating HDL code is still restricted. We propose the AutoSilicon framework, which aims to scale up the hardware design capability of LLMs. AutoSilicon incorporates an agent system, which 1) allows for the decomposition of large-scale, complex code design tasks into smaller, simpler tasks; 2) provides a compilation and simulation environment that enables LLMs to compile and test each piece of code it generates; and 3) introduces a series of optimization strategies. Experimental results show that AutoSilicon could scale the hardware design capability well LLMs in terms of both the design size and quality. To further promote the LLM-based hardware design methodology, we organized the 1st OpenDACs LLM-based Processor Design Competition using the AutoSilicon framework. The outcomes provided a set of lessons learned of LLM-based hardware design methodologies.</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Bio</h5>
+                    <p class="card-text">Cangyuan Li is a PhD student at the Institute of Computing Technology, Chinese Academy of Sciences, where he is mentored by Professor Ying Wang. His research is centered on the design automation of application-specific accelerators, exploring both large language model-based methodologies and template-based approaches. His researches have been published in conferences such as ATC and DAC.</p>
+                </div>
+            </div>
+
+            <div class="card anchor mb-3" id="no7">
+                <h4 class="card-header">Machine Learning Assisted Memory and Storage System Management</h4>
+                <!-- <div class="card-body">
+                    <h5 class="card-title">Abstract</h5>
+                    <p class="card-text"></p>
+		</div> -->
+                <div class="card-body">
+                    <h5 class="card-title">Bio</h5>
+		    <p class="card-text">Onur Mutlu is a Professor of Computer Science at ETH Zurich. He is also a Visiting Professor at Stanford University and a faculty member at Carnegie Mellon University, where he previously held the Strecker Early Career Professorship. His current broader research interests are in computer architecture, systems, hardware security, and bioinformatics. A variety of techniques he, along with his group and collaborators, has invented over the years have influenced industry and have been employed in commercial microprocessors and memory/storage systems. He obtained his PhD and MS in ECE from the University of Texas at Austin and BS degrees in Computer Engineering and Psychology from the University of Michigan, Ann Arbor. He started the Computer Architecture Group at Microsoft Research (2006-2009), and held various product and research positions at Intel Corporation, Advanced Micro Devices, VMware, and Google. He received various honors for his research, including the IFIP Jean-Claude Laprie Award in Dependable Computing, Persistent Impact Prize of the Non-Volatile Memory Systems Workshop, Intel Outstanding Researcher Award, IEEE High Performance Computer Architecture Test of Time Award, IEEE Computer Society Edward J. McCluskey Technical Achievement Award, ACM SIGARCH Maurice Wilkes Award and a healthy number of best paper or “Top Pick” paper recognitions at various computer systems, architecture, and security venues. He is an ACM Fellow, IEEE Fellow, and an elected member of the Academy of Europe. His computer architecture and digital logic design course lectures and materials are freely available on YouTube <a href="https://www.youtube.com/OnurMutluLectures">https://www.youtube.com/OnurMutluLectures</a>, and his research group makes a wide variety of software and hardware artifacts freely available online <a href="https://safari.ethz.ch/">https://safari.ethz.ch/</a>. For more information, please see his webpage at <a href="https://people.inf.ethz.ch/omutlu/">https://people.inf.ethz.ch/omutlu/</a>.</p>
+                </div>
+            </div>
+            
+        </section>
+
+        <section>
+            <a class="anchor" id="Organizer"></a>
+            <hr class="my-4">
+            <h3>Organizing Committee</h3>
+            <ul class="list-unstyled">
+                <li class="fw-light"><a href="mailto:huxing@ict.ac.cn">Xing Hu</a>, ICT, Chinse Academy of Sciences</li>
+                <li class="fw-light"><a href="mailto:yibolin@pku.edu.cn">Yibo Lin</a>, Peking University</li>
+                <li class="fw-light"><a href="mailto:gsun@pku.edu.cn">Guangyu Sun</a>, Peking University</li>
+                <li class="fw-light"><a href="mailto:yuanxie@ust.hk">Yuan Xie</a>, Hong Kong University of Science and Technology (HKUST)</li>
+                <li class="fw-light"><a href="mailto:huangdi@ict.ac.cn">Di Huang</a>, ICT, Chinse Academy of Sciences</li>
+            </ul>
+        </section>
+        
+    </div>
+</main>
+
+<footer class="container cemb-4 text-center py-3">
+    <small class="text-muted">ISCA Workshop: AI for Fully-Automated Chip Design (AI4FACD @ ISCA 2024)</small>
+</footer>
