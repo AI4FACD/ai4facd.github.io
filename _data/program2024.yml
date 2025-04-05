@@ -5,7 +5,7 @@ days:
   - name: June 28th
     events:
       - time: 14:10 to 14:35
-        title: "AI for Automated Chip Design: Everything, Everywhere, All at Once"
+        title: "AI for Automated Chip Design: Everything, Everywhere, All at Once (?)"
         subtitle: David Pan, The University of Texas at Austin
         detail: "#no1"
       - time: 14:35 to 15:00
@@ -34,13 +34,11 @@ days:
         title: "Scaling Up the Hardware Design Capability of LLMs: Lessons from the 1st OpenDACs Contest of Processor Design"
         subtitle: Cangyuan Li, Institute of Computing Technology, Chinese Academy of Sciences
         detail: "#no9"
-      - time: 17:25 to 17:40
+      - time: 17:25 to 17:50
         title: A High-Level Synthesis Based Framework for Design Space Exploration and Generation of Neural Network Accelerators
         subtitle: Kartik Prabhu, Stanford University
         detail: "#no8"
-      - time: 17:40 to 17:55
+      - time: 17:50 to 18:15
         title: Machine Learning Assisted Memory and Storage System Management
         subtitle: Onur Mutlu, ETH Zurich
         detail: "#no7"
-      - time: 17:55 to 18:00
-        title: Closing Marks
