@@ -130,6 +130,42 @@ layout: default
                 <hr class="my-4">
                 <h3>Location</h3>
                 Tokyo, Japan, at the <a href="https://www.waseda.jp/top/en/" target="_blank">Waseda University</a>
+                <style>
+                    /* Don't forget to give the container a height! */
+                    #mapContainer {
+                        height: 450px;
+                        /* Or whatever height you want */
+                        width: 100%;
+                    }
+                </style>
+                <div id="mapContainer"></div>
+                <script src="{{ '/assets/js/leaflet.js' | prepend: site.url }}"></script>
+                <script>
+                    var map = L.map('mapContainer').setView([35.70912107220694, 139.71959485583108], 15); // Lat, Long, Zoom
+
+                    // Add an OpenStreetMap tile layer
+                    // Make sure to include the required attribution
+                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 19, // Maximum zoom level tiles are available for
+                        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    }).addTo(map); // Add the tile layer to the map
+
+                    // Add a marker to the map
+                    var marker = L.marker([ 35.70912107220694, 139.71959485583108]).addTo(map);
+
+                    // Add a popup to the marker (optional)
+                    marker.bindPopup("<b>Hello!</b>").openPopup();
+
+                    // You could add more markers, circles, polygons, etc. here
+                    // Example Circle:
+                    // L.circle([40.72, -74.00], {
+                    //     color: 'blue',
+                    //     fillColor: '#cde',
+                    //     fillOpacity: 0.5,
+                    //     radius: 1000 // meters
+                    // }).addTo(map).bindPopup("I am a circle.");
+
+                </script>
             </section>
 
 
