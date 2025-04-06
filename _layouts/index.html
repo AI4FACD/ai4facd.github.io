@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+{% include metadata.liquid %}
+{% include header.html %}
+
+<main class="my-4">
+    <div class="container px-5 py-3 bg-gray-2 rounded">
+        <h1 class="display-3">{{ title }}</h1>
+        <p class="lead">{{ description }}</p>
+        <hr class="my-4">
+        <li><a class="link-primary" href="{{ site.baseurl }}/2024/">AI4FACD 2024</a></li>
+	    <li><a class="link-primary" href="{{ site.baseurl }}/2025/">AI4FACD 2025</a></li>
+    </div>
+</main>
+
+<footer class="container cemb-4 text-center py-3">
+    <small class="text-muted">ISCA Workshop: AI for Fully-Automated Chip Design (AI4FACD @ ISCA 2025)</small>
+</footer>

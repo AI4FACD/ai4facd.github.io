@@ -8,20 +8,22 @@ layout: default
     <div class="container">
         <nav class="navbar navbar-expand-sm">
             <a class="navbar-brand" href="{{site.url}}/2025">
-                <img src="{{ site.baseurl }}/images/isca2025.png" alt="" width="39" height="24" class="d-inline-block align-text-top">
+                <img src="{{ site.baseurl }}/images/isca2025.png" alt="" width="39" height="24"
+                    class="d-inline-block align-text-top">
                 {{ site.title }}
             </a>
-            
-	    <div class="nav-item nav-link dropdown ms-auto">
-		<a class="btn btn-primary btn-sm dropdown-toggle" href="#" id="navbarDropdownYears" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-		    Select Year: 2025
-		</a>
-		<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownYears">
-		    <li><a class="dropdown-item" href="{{ site.baseurl }}/2024/">2024</a></li>
-	            <li><a class="dropdown-item" href="{{ site.baseurl }}/2025/">2025</a></li>
-		</ul>
-	    </div>
- 
+
+            <div class="nav-item nav-link dropdown ms-auto">
+                <a class="btn btn-primary btn-sm dropdown-toggle" href="#" id="navbarDropdownYears" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Select Year: 2025
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownYears">
+                    <li><a class="dropdown-item" href="{{ site.baseurl }}/2024/">2024</a></li>
+                    <li><a class="dropdown-item" href="{{ site.baseurl }}/2025/">2025</a></li>
+                </ul>
+            </div>
+
             <div class="collapse navbar-collapse" id="navigation">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="#About">About</a>
@@ -39,25 +41,28 @@ layout: default
 
     <style>
         a.anchor {
-          display: block;
-          position: relative;
-          top: -60px;
-          visibility: hidden;
+            display: block;
+            position: relative;
+            top: -60px;
+            visibility: hidden;
         }
     </style>
 
     <div class="container px-5 py-3 bg-gray-2 rounded">
-        
+
         <div style="
+        background-color: #07263b;
 	    background-image: url('{{ site.baseurl }}/images/bg2025.jpg');
+        background-repeat: no-repeat;
 	    background-size: contain;
 	    background-position: center center;
 	    width: 100%;
 	">
-        <h1 class="display-3 text-center text-light">AI for Fully-Automated Chip Design</h1>
-        <h1 class="display-3 text-center text-light">The Times They Are a-Changin'</h1>
-        <p class="lead text-center text-light">June 21-25, 2025, Tokyo, Japan</p>
-        <p class="lead text-center text-light">Co-Located with <a class="text-danger" href="https://iscaconf.org/isca2025/"><strong>ISCA 2025</strong></a></p>
+            <h1 class="display-3 text-center text-light">AI for Fully-Automated Chip Design</h1>
+            <h1 class="display-3 text-center text-light">The Times They Are a-Changin'</h1>
+            <p class="lead text-center text-light">June 21-25, 2025, Tokyo, Japan</p>
+            <p class="lead text-center text-light">Co-Located with <a class="text-danger"
+                    href="https://iscaconf.org/isca2025/"><strong>ISCA 2025</strong></a></p>
         </div>
 
         <section>
@@ -65,26 +70,28 @@ layout: default
             <hr class="my-4">
             <h3>About</h3>
             <p>
-                Welcome to the workshop on <strong>AI for Fully-Automated Chip Design</strong>, to be located with ISCA 2025.
-		This year has marked a transformative leap in AI technology, particularly in the
-		domain of <strong>reasoning tasks</strong>, where AI has surpassed average human performance in
-		areas such as mathematical problem-solving and competitive programming.
-		Impressively, AlphaProof won a silver medal at the IMO, OpenAI O3 has achieved a programming level
-		comparable to the top 200 competitors worldwide on Codeforces, and DeepSeek R1 has
-		demonstrated the self-emergence of reasoning in LLMs. Chip design, which represents
-		the apex of logical computation — a fundamental reasoning task — has seen its potential for
-		fully automated design greatly enhanced by the rapid advancements in AI-driven
-		methodologies and computational intelligence. We are eager to explore whether the
-		revolutionary advancements in AI are truly sufficient to solve this Holy Grail problem in
-		computing, ushering in a new era.
+                Welcome to the workshop on <strong>AI for Fully-Automated Chip Design</strong>, to be located with ISCA
+                2025.
+                This year has marked a transformative leap in AI technology, particularly in the
+                domain of <strong>reasoning tasks</strong>, where AI has surpassed average human performance in
+                areas such as mathematical problem-solving and competitive programming.
+                Impressively, AlphaProof won a silver medal at the IMO, OpenAI O3 has achieved a programming level
+                comparable to the top 200 competitors worldwide on Codeforces, and DeepSeek R1 has
+                demonstrated the self-emergence of reasoning in LLMs. Chip design, which represents
+                the apex of logical computation — a fundamental reasoning task — has seen its potential for
+                fully automated design greatly enhanced by the rapid advancements in AI-driven
+                methodologies and computational intelligence. We are eager to explore whether the
+                revolutionary advancements in AI are truly sufficient to solve this Holy Grail problem in
+                computing, ushering in a new era.
             </p>
 
             <p>
-	    Therefore, we aim to organize this workshop to bring
-	    together more architectural designers to discuss <strong>how to apply the cutting-edge AI
-            techniques to boost automated architectural design</strong>,
-	    and necessitate collaboration among researchers with expertise in
-	    <strong>machine learning, programming languages, compilers, computer architecture, and electronic design automation (EDA)</strong>.
+                Therefore, we aim to organize this workshop to bring
+                together more architectural designers to discuss <strong>how to apply the cutting-edge AI
+                    techniques to boost automated architectural design</strong>,
+                and necessitate collaboration among researchers with expertise in
+                <strong>machine learning, programming languages, compilers, computer architecture, and electronic design
+                    automation (EDA)</strong>.
             </p>
         </section>
 
@@ -95,7 +102,8 @@ layout: default
             This workshop will focus on but not limited to the following topics:
             <ul>
                 <li>Benchmarks, Datasets, and Tool-suits for AI-driven Automated Chip Design.</li>
-                <li>Foundation Models (LLMs and Multimodal Models), Agents, and Frameworks for Automated Circuit and Chip Design.</li>
+                <li>Foundation Models (LLMs and Multimodal Models), Agents, and Frameworks for Automated Circuit and
+                    Chip Design.</li>
                 <li>Architecture Design Language or Software Stack for AI-driven Automated Chip Design.</li>
                 <li>AI Techniques for Power/Performance/Area (PPA) Prediction and Optimization.</li>
                 <li>Verification and Testing Flows for AI-driven Automated Chip Design.</li>
@@ -105,29 +113,26 @@ layout: default
             </ul>
         </section>
 
-	<section>
-	    <a class="anchor" id="Callforpapers"></a>
-	    <hr class="my-4">
-	    <h3>Call For Papers</h3>
-	    Please refer to the following timeline for the submission process:
-	    <ul>
-		<li>Abstract submissions deadline: April, 2025</li>
-		<li>Abstract submission web page: <a href="mailto:ai4facd@gmail.com">ai4facd@gmail.com</a></li>
-		<li>Author notification: May, 2025</li>
-	    </ul>
-
-
         <section>
-            <a class="anchor" id="Location"></a>
+            <a class="anchor" id="Callforpapers"></a>
             <hr class="my-4">
-            <h3>Location</h3>
-            Tokyo, Japan, at the <a href="https://www.waseda.jp/top/en/" target="_blank">Waseda University</a>
-            {%if site.data.locations %}
-            <div id="map"></div>
-            {% endif %}
-        </section>
+            <h3>Call For Papers</h3>
+            Please refer to the following timeline for the submission process:
+            <ul>
+                <li>Abstract submissions deadline: April, 2025</li>
+                <li>Abstract submission web page: <a href="mailto:ai4facd@gmail.com">ai4facd@gmail.com</a></li>
+                <li>Author notification: May, 2025</li>
+            </ul>
 
-        
+
+            <section>
+                <a class="anchor" id="Location"></a>
+                <hr class="my-4">
+                <h3>Location</h3>
+                Tokyo, Japan, at the <a href="https://www.waseda.jp/top/en/" target="_blank">Waseda University</a>
+            </section>
+
+
     </div>
 </main>
 
