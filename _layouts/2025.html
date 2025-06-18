@@ -239,21 +239,184 @@ layout: default
             </script>
         </section>
 
+        <section>
+            <a class="anchor" id="Details"></a>
+            <hr class="my-4">
+            <h3>Program Details</h3>
+
+            <div class="card anchor mb-3" id="no2">
+                <h4 class="card-header">Hypothesizing (Fantasizing) Autonomous Hardware Design</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Abstract</h5>
+                    <p class="card-text">Inspired by recent successes of AI in coding and mathematical reasoning, it is
+                        natural to ask: can similar approaches learn to design hardware autonomously, guided by
+                        verifiable feedback like compilation success or performance metrics? A major bottleneck in this
+                        feedback loop is today's EDA tool stack, which is slow to run, hard to adapt to new
+                        architectures/technologies, and heavily reliant on brittle handcrafted heuristics. This talk
+                        outlines our ongoing exploration of combining LLMs, formal methods, and differentiable compiler
+                        optimizations--that could enable scalable, feedback-driven EDA tool construction and ultimately
+                        unlock the path toward generative hardware design.</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Bio</h5>
+                    <p class="card-text">Zhiru Zhang is a Professor in the School of ECE at Cornell University. His
+                        current research investigates new algorithms, design methodologies, and automation tools for
+                        heterogeneous computing. Dr. Zhang is an IEEE Fellow and has been honored with the Intel
+                        Outstanding Researcher Award, AWS AI Amazon Research Award, Facebook Research Award, Google
+                        Faculty Research Award, DAC Under-40 Innovators Award, DARPA Young Faculty Award, IEEE CEDA
+                        Ernest S. Kuh Early Career Award, and NSF CAREER Award. He has also received multiple best paper
+                        awards from premier conferences and journals in the fields of computer systems and machine
+                        learning. He was a co-founder of AutoESL, a high-level synthesis start-up later acquired by
+                        Xilinx (now part of AMD). AutoESL's HLS tool evolved into Vivado/Vitis HLS, which is widely used
+                        for designing FPGA-based hardware accelerators.</p>
+                </div>
+            </div>
+
+            <div class="card anchor mb-3" id="no3">
+                <h4 class="card-header">The Role of AI for Next Generation SW/HW Codesign</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Abstract</h5>
+                    <p class="card-text">SW/HW codesign offers the promise of higher performance and more efficient
+                        systems by jointly optimizing software (SW) and hardware (HW) design decisions in a closed
+                        feedback loop. Historically, closing this loop between SW algorithm designers and HW experts has
+                        been challenging due to various factors such as differences in execution speed, semantic gaps in
+                        design representations, and expertise disparities. This talk will provide a view on how AI for
+                        HW can help address these challenges and unlock unprecedented design flow efficiencies and close
+                        gaps in the SW/HW codesign loop. By fully automating the HW design processes with AI, we can
+                        eventually empower algorithm designers to make hardware-aware design decisions and unlock a
+                        powerful new class of SW/HW codesign optimizations.</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Bio</h5>
+                    <p class="card-text">Vincent T. Lee is a Research Scientist in Reality Labs Research at Meta working
+                        on next-generation XR systems and architectures. He received his PhD in Computer Science and
+                        Engineering from the University of Washington specializing in computer architecture. His
+                        research interests include full-system architecture modeling and optimization, SW/HW codesign,
+                        AI-assisted EDA/CAD, agile hardware design methodologies, and sustainability-aware system design
+                        for XR systems.</p>
+                </div>
+            </div>
+
+            <div class="card anchor mb-3" id="no4">
+                <h4 class="card-header">QiMeng: Automated Hardware and Software Design for Processor Chip</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Abstract</h5>
+                    <p class="card-text">With the rapid advancement of information technology, conventional design
+                        paradigms face three major challenges: the physical constraints of fabrication technologies, the
+                        escalating demands for design resources, and the increasing diversity of ecosystems. Automated
+                        processor chip design has emerged as a transformative solution to address these challenges.
+                        However, substantial challenges remain in establishing domain-specific LLMs for processor chip
+                        design. In this talk, I will introduce QiMeng, a novel system for fully automated hardware and
+                        software design of processor chips. QiMeng comprises three hierarchical layers. In the
+                        bottom-layer, it constructs a domain-specific Large Processor Chip Model (LPCM) that introduces
+                        novel designs in architecture, training, and inference, to address key challenges such as
+                        knowledge representation gap, data scarcity, correctness assurance, and enormous solution space.
+                        In the middle-layer, leveraging the LPCM's knowledge representation and inference capabilities,
+                        it develops the Hardware Design Agent and the Software Design Agent to automate the design of
+                        hardware and software for processor chips. Currently, several components of QiMeng have been
+                        completed and successfully applied in various top-layer applications, demonstrating significant
+                        advantages and providing a feasible solution for efficient, fully automated hardware/software
+                        design of processor chips. Future research will focus on integrating all components and
+                        performing iterative top-down and bottom-up design processes to establish a comprehensive QiMeng
+                        system. </p>
+                </div>
+                <!-- <div class="card-body">
+                    <h5 class="card-title">Bio</h5>
+                    <p class="card-text">Qijing Jenny Huang is a research scientist at NVIDIA. Her research focuses on
+                        emerging GPU architecture and the co-optimization of algorithms, mappings, and hardware to
+                        enhance the system performance. Before NVIDIA, she earned her PhD in Computer Science from UC
+                        Berkeley. During her PhD, she has worked on algorithm-hardware codesign for FPGA accelerators,
+                        HLS-based design methodology, and ML/ILP-assisted compiler optimization and hardware DSE
+                        techniques.</p>
+                </div> -->
+            </div>
+
+            <div class="card anchor mb-3" id="no5">
+                <h4 class="card-header">Hair of the Dog: How AI Can Help Formally Verify AI-Designed Chips</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Abstract</h5>
+                    <p class="card-text">The use of AI in chip design has grown by leaps and bounds, improving our
+                        ability to effectively carry out tasks like layout generation and clock tree synthesis. Ongoing
+                        work is also looking at incorporating AI into earlier parts of the architectural design process.
+                        However, the outputs of AI models are not guaranteed to be correct. To truly enable
+                        fully-automated chip design, we need to ensure that AI-designed chips satisfy functional
+                        requirements, security guarantees, and more.</p>
+                    <p class="card-text">
+                        Formal verification can enable the strong correctness guarantees that we need from our chips
+                        today. However, formal verification is difficult to scale to large designs like those of
+                        commercial processors. Can AI help bridge this gap? In this talk, I will describe two techniques
+                        from the formal methods community that use AI to help formal methods tackle larger problems. I
+                        will cover the use of AI in neurosymbolic synthesis approaches, which can be used to generate
+                        formal microarchitectural models to use for verification. I will also cover how AI can be used
+                        to improve verification efficiency by synthesising invariants necessary for verification.
+                        Finally, I will cover some of the open challenges in applying AI to formal hardware
+                        verification.
+                    </p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Bio</h5>
+                    <p class="card-text">Yatin Manerkar is an Assistant Professor in the Computer Science and
+                        Engineering Division at the University of Michigan. He received his PhD from Princeton
+                        University in January 2021, and was advised by Prof. Margaret Martonosi. His research lies on
+                        the boundary between computer architecture and formal methods, and develops automated formal
+                        methodologies and tools for the design and verification of hardware and software systems.
+                        Yatin's work covers multiple areas, including concurrency, hardware security, and formal
+                        synthesis. His research has been recognised with three best paper nominations, and three of his
+                        papers have been recognised as IEEE Micro Top Picks or Honorable Mentions for their high
+                        potential impact. Yatin's PhD dissertation also received an Honorable Mention for the ACM
+                        SIGARCH/IEEE CS TCCA Outstanding Dissertation Award in 2021. He has received Distinguished
+                        Reviewer Awards from PLDI and ASPLOS.</p>
+
+                </div>
+            </div>
+
+            <div class="card anchor mb-3" id="no6">
+                <h4 class="card-header">Learning with Limited Resources: Optimizing Neural Networks for Extreme
+                    Efficiency</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Abstract</h5>
+                    <p class="card-text">In this talk, we discuss a few cutting-edge methodologies for optimizing neural
+                        networks in resource-constrained environments. To this end, we address key challenges in neural
+                        architecture search, dynamic adaptation, on-device training, while focusing on significantly
+                        reducing the computational and memory requirements while maintaining energy efficiency for
+                        various IoT applications. By optimizing for efficiency, these methods pave the way towards more
+                        scalable, adaptable, and sustainable AI solutions, thus facilitating broader deployment across
+                        diverse, resource-limited settings.</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Bio</h5>
+                    <p class="card-text">Radu Marculescu is a Professor and the Laura Jennings Turner Chair in
+                        Engineering in the Department of Electrical and Computer Engineering at The University of Texas
+                        at Austin. Between 2000-2019, he was a Professor in the Electrical and Computer Engineering
+                        department at Carnegie Mellon University. His current research focuses on developing AI/ML
+                        algorithms and tools for system design and optimization for computer vision, bioimaging, and IoT
+                        applications. He has received the 2019 IEEE Computer Society Edward J. McCluskey Technical
+                        Achievement Award, for seminal contributions to the science of network on chip design, analysis,
+                        and optimization. He has also received the 2020 ESWEEK Test-of-Time Award from The International
+                        Conference on Hardware/Software Co-Design and System Synthesis (CODES). He is an IEEE Fellow and
+                        an ACM Fellow.</p>
+                </div>
+            </div>
+
+        </section>
+
 
         <section>
             <a class="anchor" id="Organizer"></a>
             <hr class="my-4">
             <h3>Organizing Committee</h3>
-	    <h4>PC Chairs</h4>
+            <h4>PC Chairs</h4>
             <ul class="list-unstyled">
                 <li class="fw-light"><a href="mailto:huxing@ict.ac.cn">Xing Hu</a>, ICT, Chinse Academy of Sciences</li>
                 <li class="fw-light"><a href="mailto:yibolin@pku.edu.cn">Yibo Lin</a>, Peking University</li>
                 <li class="fw-light"><a href="mailto:gsun@pku.edu.cn">Guangyu Sun</a>, Peking University</li>
-                <li class="fw-light"><a href="mailto:yuanxie@ust.hk">Yuan Xie</a>, Hong Kong University of Science and Technology (HKUST)</li>
+                <li class="fw-light"><a href="mailto:yuanxie@ust.hk">Yuan Xie</a>, Hong Kong University of Science and
+                    Technology (HKUST)</li>
             </ul>
-	    <h4>Web Chairs</h4>
+            <h4>Web Chairs</h4>
             <ul class="list-unstyled">
-                <li class="fw-light"><a href="mailto:nanziyuan21s@ict.ac.cn">Ziyuan Nan</a>, ICT, Chinse Academy of Sciences</li>
+                <li class="fw-light"><a href="mailto:nanziyuan21s@ict.ac.cn">Ziyuan Nan</a>, ICT, Chinse Academy of
+                    Sciences</li>
                 <li class="fw-light"><a href="mailto:@ict.ac.cn">Chenxiao Liu</a>, ICT, Chinse Academy of Sciences</li>
             </ul>
         </section>
