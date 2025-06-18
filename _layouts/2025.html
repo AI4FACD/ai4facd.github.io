@@ -28,8 +28,7 @@ layout: default
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="#About">About</a>
                     <a class="nav-item nav-link" href="#Topics">Topics</a>
-                    <a class="nav-item nav-link" href="#Organization">Organization</a>
-                    <a class="nav-item nav-link" href="#SubmissionGuideline">Submission</a>
+                    <a class="nav-item nav-link" href="#Program">Program</a>
                     <a class="nav-item nav-link" href="#Location">Location</a>
                     <a class="nav-item nav-link" href="#Organizer">Organizer</a>
                     <a class="nav-item nav-link" href="mailto:ai4facd@gmail.com">Contact us</a>
@@ -116,33 +115,84 @@ layout: default
         </section>
 
         <section>
-            <a class="anchor" id="Organization"></a>
+            <a class="anchor" id="Program"></a>
             <hr class="my-4">
-            <h3>Organization and Program Format</h3>
-	    This workshop will consist of talks given by invited experts from both industry and academia.
-	    We plan to organize a half-day workshop, along with a poster session.
-        </section>
+            <h3>Program</h3>
 
-        <section>
-            <a class="anchor" id="SubmissionGuideline"></a>
+            {% if site.data.program2025 %}
             <hr class="my-4">
-            <h3>Poster Submission Guideline</h3>
-            <p><strong>Submissions are now open!</strong> We invite contributions for the workshop.</p>
-            <p>Please submit your work via our official HotCRP portal:</p>
-            <p><a href="https://ai4facd2025.hotcrp.com/" target="_blank" rel="noopener noreferrer">https://ai4facd2025.hotcrp.com/</a></p>
-	    <ul>
-		    <li>This workshop welcomes submissions of <strong>short papers</strong>, limited to 2 pages (excluding references), formatted in a double-column layout.</li>
-		    <li>Authors are encouraged to use the provided <a href="{{site.baseurl}}/assets/downloads/template.tex">LaTeX template</a>.</li>
-		    <li><strong>Submissions must clearly define the research problem, its motivation, and technical contributions</strong>, written in English and submitted as a single PDF file.</li>
-		    <li><strong>Papers may include works in progress, exploratory or preliminary studies, or previously published research.</strong></li>
-		    <li><strong>Submissions will be evaluated based on novelty, technical quality, potential impact, community interest, clarity, relevance to the workshop, and reproducibility.</strong></li>
-		    <li><strong>Reviews will be non-blind;</strong> authors must include their names and affiliations in the PDF without anonymization.</li>
-		    <li><strong>Accepted papers will not appear in formal proceedings</strong> but will be published on the workshop website, allowing authors to further develop and submit their work elsewhere.</li>
-		    <li><strong>At least one author of each accepted paper must attend the workshop and present their work.</strong></li>
-		    <li><strong>Submission Deadline: May 16th</strong></li>
-		    <li><strong>Notification Deadline: May 25th</strong></li>
-	    </ul>
-	    <a href="{{site.baseurl}}/assets/downloads/template.tex" class="btn btn-dark">Download LaTeX template</a>
+            <div class="row">
+                <div class="accordion accordion-flushs">
+                    {% for day in site.data.program2025.days %}
+                    {% assign slug = day.name | slugify %}
+                    <div class="accordion-item">
+                        <h5 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#{{ slug }}" aria-expanded="true" aria-controls="{{ slug }}">
+                                <span class="h5 m-0">{{ day.name }}</span>
+                            </button>
+                        </h5>
+                        <div id="{{ slug }}" class="accordion-collapse collapse show">
+                            <div class="accordion-body mt-2">
+                                {% assign categories = site.data.program2025.legend.categories %}
+                                <ul class="list-unstyled ms-3 ms-lg-0 lh-sm">
+                                    {% for event in day.events %}
+                                    {% if event.category %}
+                                    {% assign category = categories | find: 'name', event.category %}
+                                    {% assign color = category.color %}
+                                    {% else %}
+                                    {% assign color = 'gray-4' %}
+                                    {% endif %}
+                                    {% assign start = event.time | split: ' to ' | slice: 0 %}
+                                    {% assign end = event.time | split: ' to ' | slice: 1 %}
+                                    <li class="d-flex flex-column flex-lg-row">
+                                        {% assign classes = color | prepend: 'border-start border-3 border-' %}
+                                        <div class="row col-lg-2 pb-2 {{ classes }} border-lg-0">
+                                            <small class="fw-light text-muted">{{ start }}–{{ end }}</small>
+                                        </div>
+                                        {% unless forloop.last %}
+                                        {% assign classes = classes | append: ' mb-4' %}
+                                        {% endunless %}
+                                        <div class="row col-lg-10 {{ classes }}">
+                                            {% if event.detail %}
+                                            <h5 class="fw-normal m-0 mb-2"><a href="{{ event.detail }}">{{ event.title
+                                                    }}</a></h5>
+                                            {% else %}
+                                            <h5 class="fw-normal m-0 mb-2">{{ event.title }}</h5>
+                                            {% endif %}
+                                            <p class="fw-light m-0">{{ event.subtitle }}</p>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                {% assign legend = day.events | map: 'category' | compact | uniq %}
+                                {% assign size = legend | size %}
+                                {% if size > 0 %}
+                                <div class="mt-4 mb-2">
+                                    {% if site.data.program2025.legend.title %}
+                                    <h5 class="fw-normal">{{ site.data.program.legend.title }}</h5>
+                                    {% endif %}
+                                    {% for item in legend %}
+                                    {% assign border = categories | where: 'name', item | map: 'color' | first %}
+                                    {% assign bg = border | split: '-' | first | prepend: 'bg-' | append: '-1' %}
+                                    {% assign classes = border | prepend: ' border-' | prepend: bg %}
+                                    {% unless forloop.last %}
+                                    {% assign classes = classes | append: ' me-lg-2' %}
+                                    {% endunless %}
+                                    {% if border %}
+                                    <small
+                                        class="d-block d-lg-inline-block mt-2 px-3 py-1 border-start border-3 {{ classes }}">{{
+                                        item | upcase }}</small>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
         </section>
 
 
