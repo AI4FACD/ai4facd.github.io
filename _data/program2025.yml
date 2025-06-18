@@ -6,27 +6,27 @@ days:
     events:
       - time: 08:45 to 09:00
         title: "Welcome and Introduction"
-        subtitle: Xing Hu
+        subtitle: Xing Hu, Institute of Computing Technology, Chinese Academy of Sciences
         detail: "#no1"
       - time: 09:00 to 09:30
         title: " Hypothesizing (Fantasizing) Autonomous Hardware Design"
-        subtitle: Zhiru Zhang
+        subtitle: Zhiru Zhang, Cornell University
         detail: "#no2"
       - time: 09:30 to 10:00
         title: "The Role of AI for Next Generation SW/HW Codesign"
-        subtitle: Vincent Lee
+        subtitle: Vincent T. Lee, Meta
         detail: "#no3"
       - time: 10:00 to 10:30
         title: "QiMeng: Automated Hardware and Software Design for Processor Chip"
-        subtitle: Di Huang
+        subtitle: Di Huang, Institute of Computing Technology, Chinese Academy of Sciences
         detail: "#no4"
       - time: 10:30 to 11:00
         title: "Hair of the Dog: How AI Can Help Formally Verify AI-Designed Chips"
-        subtitle: Yatin Manerkar
+        subtitle: Yatin Manerkar, University of Michigan
         detail: "#no5"
       - time: 11:00 to 11:30
         title:  "Learning with Limited Resources: Optimizing Neural Networks for Extreme Efficiency"
-        subtitle: Radu Marculescu
+        subtitle: Radu Marculescu, University of Texas at Austin
         detail: "#no6"
       - time: 11:30 to 11:45
         title: Break
